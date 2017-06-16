@@ -19,20 +19,20 @@ import javax.persistence.Table;
                 "( lower(u.username) like :search or u.email like :search ) order by u.username"),
 })
 @Entity
-@Table(name="t_users")
+@Table(name="userentity")
 public class UserEntity {
     @Id
     @Column(name="id")
     private String id;
-    @Column(name="f_name")
+    @Column(name="username")
     private String username;
-    @Column(name="f_email")
+    @Column(name="email")
     private String email;
-    @Column(name="f_password")
+    @Column(name="password")
     private String password;
-    @Column(name="f_phone")
+    @Column(name="phone")
     private String phone;
-    @Column(name="f_address")
+    @Column(name="address")
     private String address;
 
     public String getId() {
@@ -82,6 +82,6 @@ public class UserEntity {
     public void setAddress(String address) {
         this.address = address;
     }
-    
+
     
 }
