@@ -21,7 +21,7 @@
 
     <groupId>user-storage-jpa-example</groupId>
     <version>1</version>
-    <name>SPI JPA Provider</name>
+    <name>SPI JPA Provider Oracle</name>
     <description/>
     <modelVersion>4.0.0</modelVersion>
 
@@ -72,7 +72,7 @@
             <artifactId>jboss-ejb-api_3.2_spec</artifactId>
             <version>1.0.0.Final</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>        
     </dependencies>
 
     <build>

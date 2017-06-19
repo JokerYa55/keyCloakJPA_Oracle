@@ -169,7 +169,7 @@ public class EjbExampleUserStorageProvider implements UserStorageProvider,
     public UserModel addUser(RealmModel realm, String username) {
         log.info("addUser");
         UserEntity entity = new UserEntity();
-        entity.setId(UUID.randomUUID().toString());
+        //entity.setId(UUID.randomUUID().toString());
         entity.setUsername(username);
         em.persist(entity);
         log.info("added user: " + username);
