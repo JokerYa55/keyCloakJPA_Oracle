@@ -32,7 +32,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.UUID;
 import org.keycloak.common.util.MultivaluedHashMap;
 import org.keycloak.models.ClientModel;
 import org.keycloak.models.FederatedIdentityModel;
@@ -113,7 +112,8 @@ public class EjbExampleUserStorageProvider implements UserStorageProvider,
     public UserModel getUserById(String id, RealmModel realm) {
         log.info("getUserById\n\n\tid = " + id + "\n\t realm = " + realm.getName());
         String persistenceId = StorageId.externalId(id);
-        UserEntity entity = em.find(UserEntity.class, persistenceId);
+        log.info("persistenceId = " + persistenceId);
+        UserEntity entity = em.find(UserEntity.class, new Long(persistenceId));
         if (entity == null) {
             log.info("could not find user by id: " + id);
             return null;
@@ -688,4 +688,6 @@ public class EjbExampleUserStorageProvider implements UserStorageProvider,
         log.info("getStoredCredentialByNameAndType");
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+    
+    
 }
